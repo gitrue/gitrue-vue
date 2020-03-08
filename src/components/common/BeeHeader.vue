@@ -1,5 +1,5 @@
 <template>
-
+<!-- http://www.gitrue.com:9000/image/logo.png -->
     <div id="bee-header"   element-loading-text="正在努力请求github..." element-loading-background="rgba(0, 0, 0, 0.8)">
         <!-- 遮罩 -->
         <div  :class="  loading ? `modal is-active` : `modal` " style="background-color: #ffffff36">
@@ -10,9 +10,7 @@
     <div class="container">
       <nav class="navbar ">
         <div class="navbar-brand">
-          <a class="navbar-item" @click="handleMenuCommand('/')">
-            <img src="https://i.loli.net/2018/11/23/5bf8016eb0ea0.png" alt="Bulma: a modern CSS framework based on Flexbox" width="92" height="28">
-          </a>
+            <img @click="handleMenuCommand('/')" src="http://www.gitrue.com:9000/image/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="130" height="28">
           <div class="login-before is-hidden-mobile" style="padding-top: 5px;">
             <a class="navbar-item is-hidden-desktop" href="https://github.com/pkwenda/my-bbs" target="_blank">
               <span class="icon" style="color: #333;">
@@ -27,7 +25,7 @@
             <popup v-model="popupShow" position="right" style="background-color: #fff;">
               <div style="width:200px;">
                 <p class="menu-label">
-                  <div class="tags has-addons" style="margin-left:30px;"><span class="tag is-warning"><img src="https://img.actd.tw/images/2018/11/17/bee.png" alt="new-bee 社区" width="50" style="float:left" ></span><span class="tag is-danger">测试版</span></div>
+                  <div class="tags has-addons" style="margin-left:30px;"><span class="tag is-warning"><img src="http://www.gitrue.com:9000/image/logo.png" alt="new-bee 社区" width="50" style="float:left" ></span><span class="tag is-danger">测试版</span></div>
                 </p>
                 <ul class="menu-list"  >
                   <li style="padding: 2px 5px 2px 5px;"><a class="button is-warning" >登录</a></li>
@@ -73,20 +71,20 @@
             </a>
              <a class="navbar-item " href="https://bulma.io/expo/">
               <!--<span class="bd-emoji">⭐️</span>-->
-              专栏
+              社区共建
+            </a>
+             <a class="navbar-item " href="https://bulma.io/expo/">
+              <!--<span class="bd-emoji">⭐️</span>-->
+              新闻
             </a>
             <a class="navbar-item " href="https://bulma.io/expo/">
               <!--<span class="bd-emoji">⭐️</span>-->
               聊天
               <!-- 很多人不知道干什么。。。 -->
             </a>
-            <a class="navbar-item " href="https://bulma.io/expo/">
-              <!--<span class="bd-emoji">⭐️</span>-->
-              面经
-            </a>
             <router-link class="navbar-item " to="/book">
               <!--<span class="bd-emoji">❤️</span>-->
-              书籍
+              书评
             </router-link>
           </div>
 
@@ -273,7 +271,7 @@ export default {
     font-size: 18px;
   }
   .navbar-item-home {
-    background-color: #F9BA48;
+    background-color: #fbca0a;
     color:#ffffff !important;
   }
   

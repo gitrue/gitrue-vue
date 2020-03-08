@@ -11,7 +11,9 @@
             <div class="media" v-for="item in moke.cards" v-bind:key="item">
               <div class="media-left">
                 <figure class="image is-64x64">
-                  <img class="is-rounded" src="http://www.gitrue.com:9000/image/avatar.png" alt="Placeholder image">
+                  <!-- <img class="is-rounded avatar" src="http://www.gitrue.com:9000/image/avatar.png" alt="Placeholder image"> -->
+                  <!-- <div class="is-rounded avatar"   alt="Placeholder image"> </div> -->
+                  <SvgAvatar :name="moke.users[item-1]"> </SvgAvatar>   
                 </figure>
               </div>
               <div class="media-content">
@@ -19,20 +21,13 @@
                   <div class="post-title">
                     <a href="#" style="color:#7B7B7B;" >【新人必看】希望你在社区得到价值的同时，也能尊重社区的规则。</a>
                   </div>
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                  <br>
+                  <!-- <a href="#">#css</a> <a href="#">#responsive</a> -->
+                  <!-- <br> -->
                   <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                 </div>
               </div>
-
-              
             </div>
-
-            
           </div>
-           
- 
- 
         </div>
         <!-- todo 根据页面优化宽度细节 -->
         <div class="app-sider tile is-parent is-3">
@@ -45,21 +40,34 @@
               </div>
             </div>
           </article>
-
-          
         </div>
       </div>
 </template>
 
 
 <script>
+import SvgAvatar from "./SvgAvatar.vue";
 export default {
   name: "Section",
   props: { tagList: Array },
+  components: {SvgAvatar},
+  created() {
+
+    // window.onload = function what(){
+    // console.log(Pictogrify)
+    //   new Pictogrify('my text').render(document.querySelector('.avatar'))
+    // };
+
+  },
   data() {
     return {
-      moke: {cards : 10,tags:["沙雕新闻","远程","创意","想法","远程","分享","团购","极客"]}
+      moke: {
+        cards : 10,
+        tags:["沙雕新闻","远程","创意","想法","远程","分享","团购","极客"],
+        users:['庄文达','郭萌萌','mlh','zxf','nanocosa','zfs','asds','ddd','java','hogu']
+        }
     };
+
   },
   mounted() {
      

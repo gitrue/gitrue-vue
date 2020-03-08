@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <img class="login-city" src="https://cssninja.io/themes/cssninja/assets/images/bg/temple.svg" alt="">
+            <img class="login-city" src="http://www.gitrue.com:9000/image/gitrue/slack-slack-com.svg" alt="">
         </div>  
 </template>
  

@@ -11,6 +11,7 @@
       </div>
       <div class="column"></div>
     </div>
+<!-- <div class="pictogram" style="width:100px"></div> -->
 
        <div class="columns">
       <div class="column"></div>
@@ -32,6 +33,11 @@ import BeeFooter from "../components/common/BeeFooter.vue";
 import CardBody from "../components/common/CardBody.vue";
 import Skeleton from "../components/common/Skeleton.vue";
 import _ from "lodash";
+// window.onload = function what(){
+// console.log(Pictogrify)
+//   new Pictogrify('my text').render(document.querySelector('.pictogram'))
+
+// };
 export default {
   name: "NewBeeIndex",
   components: { BeeHeader, CardBody, BeeFooter, Skeleton },
@@ -44,7 +50,9 @@ export default {
       tagList: ["java", "python", "node", "go", "javascript", "sql"]
     };
   },
-
+  created() {
+    
+  },
   destroyed() {},
   mounted() {
     this.getBlogs();
@@ -121,7 +129,7 @@ body {
 }
 
 .a:hover{
-  color : #F9BA48;      
+  color : #fbca0a;      
 }
 </style>
 
