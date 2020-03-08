@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '../container/index.vue'
 
 const LoginIndex = () => import(/* webpackChunkName: "login" */ '../container/login/Index.vue')
@@ -18,23 +19,23 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/login',
-    component: LoginIndex,
-    children: [{
-        path: '',
-        redirect: 'index'
-    }, {
-        path: 'index',
-        name: 'login',
-        component: Login
-    }, {
-        path: 'register',
-        name: 'register',
-        component: Register
-    }]
+    component: Login,
+    // children: [{
+    //     path: '',
+    //     redirect: 'index'
+    // }, {
+    //     path: 'index',
+    //     name: 'login',
+    //     component: Login
+    // }, {
+    //     path: 'register',
+    //     name: 'register',
+    //     component: Register
+    // }]
 
 },
 {
@@ -88,7 +89,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+    mode:'history',
+    routes
 })
 
 export default router

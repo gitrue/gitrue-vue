@@ -1,72 +1,28 @@
 <template>
-    <footer class="footer footer-light-medium " >
-    <div class="container">
-        <div class="columns">
-            <!-- Column -->
-            <div class="column is-4">
-                <div class="mb-20">
-                    <img class="small-footer-logo" src="" alt="">
-                    <div class="footer-description pt-10">
-                        <!-- new bee 是一个为开发者提供的专注于技术分享的开源社区,所有源码均可在 github 上找到,希望对广大开发者有所帮助。 -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <div class="columns is-mobile is-centered">
+                <div class="field is-grouped is-grouped-multiline">
+                    <div class="control">
+                    <div class="tags has-addons"><a class="tag is-link" href="https://github.com/BulmaTemplates/bulma-templates">Bulma Templates</a>
+                    <span class="tag is-info">MIT license</span>
                     </div>
                 </div>
-                <div>
-                     
-                    <div class="social-links mt-20">
-                        <!-- <a href="https://fb.me/cssninjaStudio" target="_blank">
-                            <span class="icon"><i class="fa fa-facebook"></i></span>
-                        </a>
-                        <a href="https://twitter.com/cssninjaStudio" target="_blank">
-                            <span class="icon"><i class="fa fa-twitter"></i></span>
-                        </a> -->
-                        <!--a href="#">
-                            <span class="icon"><i class="fa fa-dribbble"></i></span>
-                        </a-->
-                        
+                <div class="control">
+                    <div class="tags has-addons">
+                    <span class="tag is-dark">based on a pen</span>
+                    <span class="tag has-addons is-warning"><a href="https://codepen.io/melanieseltzer/pen/odOXWM"><i class="fab fa-lg fa-codepen" aria-hidden="true"></i></a></span>
                     </div>
+                </div>
                 </div>
             </div>
-            <!-- Column -->
-            <div class="column is-6 is-offset-2">
-                <div class="columns">
-                    <!-- Column -->
-                    <div class="column">
-                        <ul class="footer-column">
-                            <li class="column-header">
-                                Links
-                            </li>
-                            <li class="column-item"><a href="https://github.com/pkwenda/new-bee">Home</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/themes">Blog</a></li>
-                            <li class="column-item"><a href="https://github.com/pkwenda/new-bee/wiki">Wiki</a></li>
-                        </ul>
-                    </div>
-                    <!-- Column -->
-                    <div class="column">
-                        <ul class="footer-column">
-                            <li class="column-header">
-                                Ressources
-                            </li>
-                            <li class="column-item"><a href="https://cssninja.io/help">Help center</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/blog">Blog</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/help/rules">Rules</a></li>
-                        </ul>
-                    </div>
-                    <!-- Column -->
-                    <div class="column">
-                        <ul class="footer-column">
-                            <li class="column-header">
-                                Terms
-                            </li>
-                            <li class="column-item"><a href="https://cssninja.io/help/terms/licenses/personal">Personal</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/help/terms/licenses/developer">Developer</a></li>
-                            <li class="column-item"><a href="https://cssninja.io/help/terms/service">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <p>
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
         </div>
-    </div>
-</footer>
+    </footer>
 </template>
 
 

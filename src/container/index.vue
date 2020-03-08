@@ -1,8 +1,5 @@
 <template>
     <div  >
-        <!--<div class="container">-->
-   <BeeHeader></BeeHeader>
-
    <div class="columns">
       <div class="column"></div>
       <!-- thirds -->
@@ -20,16 +17,12 @@
       </div>
       <div class="column"></div>
     </div>
-
-        
-    <BeeFooter></BeeFooter>
   
     </div>
 </template>
 
 <script>
-import BeeHeader from "../components/common/BeeHeader.vue";
-import BeeFooter from "../components/common/BeeFooter.vue";
+
 import CardBody from "../components/common/CardBody.vue";
 import Skeleton from "../components/common/Skeleton.vue";
 import _ from "lodash";
@@ -40,7 +33,7 @@ import _ from "lodash";
 // };
 export default {
   name: "NewBeeIndex",
-  components: { BeeHeader, CardBody, BeeFooter, Skeleton },
+  components: {  CardBody, Skeleton },
   data() {
     return {
       tag: "",
