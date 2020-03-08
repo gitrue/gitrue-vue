@@ -2,48 +2,39 @@
     <div  >
         <!--<div class="container">-->
    <BeeHeader></BeeHeader>
-   <Section @tagEvent="tagEvent" :tagList="tagList" @buttonEvent="buttonEvent"></Section> 
 
-  <div class="container" id="index-main">
-    <h4 class="title is-4" v-if="blogs.length == 0">竟然没有文章...</h4>
-    <div class="columns is-multiline">
-      <Skeleton :blogLoading="blogLoadingOk" v-for="Skeleton in 2" v-bind:key="Skeleton"></Skeleton> 
-      
-      <article class="column is-3"  @click="goBlog(blog)" v-for="blog in blogs" v-bind:key="blog"> 
-        <a   v-bind:class="'bd-article-image ' + sampleBackGroundColor()" >
-          <span class="bd-article-overlay"></span>
-          <span class="bd-article-icon">
-            <i class="fa fa-tag"></i>
-          </span>
-          <strong class="bd-star-icon" ><i class="fa fa-star"></i> <span style="font-size: 1rem">&nbsp;{{blog.commendCount}}</span></strong>
-          <strong class="bd-article-info">
-            <span>
-              <time class="bd-article-date" datetime="2017-10-09T00:00:00+00:00">
-                {{blog.tag}}
-              </time>
-              <strong class="bd-article-title">
-                {{blog.title}}
-              </strong>
-            </span>
-          </strong>
-        </a>
-      </article>
+   <div class="columns">
+      <div class="column"></div>
+      <!-- thirds -->
+      <div class="column is-three-fifths">
+        <!-- <Section @tagEvent="tagEvent" :tagList="tagList" @buttonEvent="buttonEvent"></Section>  -->
+      </div>
+      <div class="column"></div>
     </div>
-    
-  </div>
-  <BeeFooter></BeeFooter>
+
+       <div class="columns">
+      <div class="column"></div>
+      <div class="column is-three-fifths">
+          <card-body></card-body>
+      </div>
+      <div class="column"></div>
+    </div>
+
+        
+    <BeeFooter></BeeFooter>
+  
     </div>
 </template>
 
 <script>
 import BeeHeader from "../components/common/BeeHeader.vue";
 import BeeFooter from "../components/common/BeeFooter.vue";
-import Section from "../components/common/Section.vue";
+import CardBody from "../components/common/CardBody.vue";
 import Skeleton from "../components/common/Skeleton.vue";
 import _ from "lodash";
 export default {
   name: "NewBeeIndex",
-  components: { BeeHeader, Section, BeeFooter, Skeleton },
+  components: { BeeHeader, CardBody, BeeFooter, Skeleton },
   data() {
     return {
       tag: "",
@@ -119,6 +110,18 @@ export default {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4A4A4A;
+  background: #F7F7F7;
+}
+
+.a:hover{
+  color : #F9BA48;      
 }
 </style>
 

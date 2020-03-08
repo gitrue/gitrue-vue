@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer footer-light-medium " style="padding-bottom: 20px;padding-top: 20px;">
+    <footer class="footer footer-light-medium " >
     <div class="container">
         <div class="columns">
             <!-- Column -->
@@ -7,13 +7,11 @@
                 <div class="mb-20">
                     <img class="small-footer-logo" src="https://i.loli.net/2018/11/23/5bf8016eb0ea0.png" alt="">
                     <div class="footer-description pt-10">
-                        new bee 是一个为开发者提供的专注于技术分享的开源社区,所有源码均可在 github 上找到,希望对广大开发者有所帮助。
+                        <!-- new bee 是一个为开发者提供的专注于技术分享的开源社区,所有源码均可在 github 上找到,希望对广大开发者有所帮助。 -->
                     </div>
                 </div>
                 <div>
-                    <span class="moto">喜欢项目可以点赞支持  <a href="https://github.com/pkwenda/new-bee" target="_blank">
-                            <span class="icon"><i class="fa fa-github"></i></span>
-                        </a>.</span>
+                     
                     <div class="social-links mt-20">
                         <!-- <a href="https://fb.me/cssninjaStudio" target="_blank">
                             <span class="icon"><i class="fa fa-facebook"></i></span>
@@ -87,3 +85,12 @@ export default {
   methods: {}
 };
 </script>
+
+<style lang="less">
+   .footer {
+       padding-bottom: 20px;
+       padding-top: 20px;
+       height : 180px;
+       background-color: #323539 ;
+   }
+</style>

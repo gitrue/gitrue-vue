@@ -52,7 +52,8 @@
                 发现
               </a>
               <div class="navbar-dropdown ">
-                <a class="navbar-item " type="收藏集">
+                
+                 <a class="navbar-item " type="收藏集">
                   收藏集
                 </a>
                 <a class="navbar-item" type="徽章">
@@ -66,7 +67,11 @@
                 </a>
               </div>
             </div>
-            <a class="navbar-item " href="https://bulma.io/expo/">
+            <a class="navbar-item navbar-item-home" href="https://bulma.io/expo/">
+              <!--<span class="bd-emoji">⭐️</span>-->
+              首页
+            </a>
+             <a class="navbar-item " href="https://bulma.io/expo/">
               <!--<span class="bd-emoji">⭐️</span>-->
               专栏
             </a>
@@ -86,7 +91,7 @@
           </div>
 
           <div class="navbar-end">
-            <div class="qq">开源社区：147255248</div>
+            <!-- <div class="qq">开源社区：147255248</div> -->
             <div class="login-before" style="padding-top: 5px;">
               <!-- pc -->
               <a class="navbar-item is-hidden-desktop-only" href="https://github.com/pkwenda/my-bbs" target="_blank">
@@ -253,4 +258,25 @@ export default {
   }
 };
 </script>
+
+
+<style lang="less">
+  .is-underline {
+    background-color: white;
+  }
+
+  .container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .navbar-item {
+    font-size: 18px;
+  }
+  .navbar-item-home {
+    background-color: #F9BA48;
+    color:#ffffff !important;
+  }
+  
+</style>
+
  
