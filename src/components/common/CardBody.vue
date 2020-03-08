@@ -14,7 +14,7 @@
                 <figure class="image is-64x64">
                   <!-- <img class="is-rounded avatar" src="http://www.gitrue.com:9000/image/avatar.png" alt="Placeholder image"> -->
                   <!-- <div class="is-rounded avatar"   alt="Placeholder image"> </div> -->
-                  <SvgAvatar :name="moke.users[item-1]"> </SvgAvatar>   
+                  <SvgAvatar :name="moke.users[item-1] "> </SvgAvatar>   
                 </figure>
               </div>
               <div class="media-content">

@@ -1,7 +1,6 @@
 <template>
-    <div  >
-       <BeeHeader></BeeHeader>
-   <Section></Section> 
+
+    <div  class="gitrue-book">
    <div id="modal-ter" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
@@ -86,12 +85,10 @@
 </template>
 
 <script>
-import BeeHeader from "../../components/common/BeeHeader.vue";
-import Section from "../../components/common/Section.vue";
  
 export default {
   name: "Book",
-  components: { BeeHeader, Section },
+  components: { },
   data() {
     return {
       content: ""
@@ -103,4 +100,16 @@ export default {
   methods: {}
 };
 </script>
+
+
+
+<style lang="less">
+  .gitrue-book {
+    margin-top: 30px !important;
+  }
+   
+  
+</style>
+
+ 
  

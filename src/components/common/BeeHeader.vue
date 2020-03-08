@@ -47,11 +47,10 @@
         </a>
       
         
-        <a class="navbar-item bd-navbar-item-love " href="https://bulma.io/love/">
-           
+        <router-link class="navbar-item bd-navbar-item-love" to="/book">
 
           <span>书评</span>
-        </a>
+        </router-link>
       
         
         <a class="navbar-item bd-navbar-item-backers " href="https://bulma.io/backers/">

@@ -12,6 +12,7 @@ const User = () => import(/* webpackChunkName: "user" */ '../container/user/User
 const Setting = () => import(/* webpackChunkName: "user" */ '../container/user/Setting.vue')
 const Life = () => import(/* webpackChunkName: "life" */ '../container/life/Life.vue')
 const Book = () => import(/* webpackChunkName: "book" */ '../container/book/Book.vue')
+const Editor = () => import(/* webpackChunkName: "book" */ '../container/Editor.vue')
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,12 @@ const routes = [
     //     name: 'register',
     //     component: Register
     // }]
+
+},
+{
+    path: '/post',
+    name: 'post',
+    component: Editor,
 
 },
 {
