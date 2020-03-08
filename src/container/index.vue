@@ -1,24 +1,9 @@
 <template>
-    <div  >
-   <div class="columns">
-      <div class="column"></div>
-      <!-- thirds -->
-      <div class="column is-three-fifths">
-        <!-- <Section @tagEvent="tagEvent" :tagList="tagList" @buttonEvent="buttonEvent"></Section>  -->
-      </div>
-      <div class="column"></div>
-    </div>
-<!-- <div class="pictogram" style="width:100px"></div> -->
-
-       <div class="columns">
-      <div class="column"></div>
-      <div class="column is-three-fifths">
+   <div class="container">
+        <div class="columns">
           <card-body></card-body>
-      </div>
-      <div class="column"></div>
-    </div>
-  
-    </div>
+        </div>
+  </div>   
 </template>
 
 <script>

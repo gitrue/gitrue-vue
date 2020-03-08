@@ -2,7 +2,7 @@
  <nav id="navbar" class="bd-navbar navbar has-shadow is-spaced gitrue-header">
   <div class="container">
   <div class="navbar-brand">
-    <a class="logo" href="https://bulma.io">
+    <a class="logo" @click="handleMenuCommand('/')">
       <img src="http://www.gitrue.com:9000/image/gitrue/7811583656157_.pic.jpg" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="200" height="50">
     </a>
 

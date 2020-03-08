@@ -1,6 +1,7 @@
 <template>
     <div class="card-body tile is-ancestor">
-        <div class="app-content tile is-vertical is-8">
+      <div class="app-content tile is-vertical is-1"></div>
+        <div class="app-content tile is-vertical is-7">
             <div class="tabs" style="margin-bottom: 0px;background-color: white !important;">
               <ul>
                 <li class="is-active"><a>全部</a></li>
@@ -86,7 +87,7 @@ export default {
 
   }
   .card-body {
-    margin-top: 5px !important;
+    margin-top: 30px !important;
   }  
   .app-content {
     // background-color: white;
