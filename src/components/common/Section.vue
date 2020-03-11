@@ -75,42 +75,42 @@ export default {
     return {};
   },
   mounted() {
-    let self = this;
-    $("nav.tabs")
-      .find("li")
-      .click(function() {
-        if (!$(this).hasClass("is-active")) {
-          $("nav.tabs")
-            .find("li")
-            .each(function(k, v) {
-              $(v).removeClass("is-active");
-            });
-          $(this).addClass("is-active");
-          self.$emit("tagEvent", $(this).attr("type"));
-          //todo:应该减少dom移出操作
-          $("#index-main").hide();
-          newBee("#index-type").animation(500, function() {
-            $("#index-main").show();
-          });
-        }
-      });
-    var typeWriterDom = document.getElementById("typeWriter");
+    // let self = this;
+    // $("nav.tabs")
+    //   .find("li")
+    //   .click(function() {
+    //     if (!$(this).hasClass("is-active")) {
+    //       $("nav.tabs")
+    //         .find("li")
+    //         .each(function(k, v) {
+    //           $(v).removeClass("is-active");
+    //         });
+    //       $(this).addClass("is-active");
+    //       self.$emit("tagEvent", $(this).attr("type"));
+    //       //todo:应该减少dom移出操作
+    //       $("#index-main").hide();
+    //       newBee("#index-type").animation(500, function() {
+    //         $("#index-main").show();
+    //       });
+    //     }
+    //   });
+    // var typeWriterDom = document.getElementById("typeWriter");
 
-    var typewriter = new Typewriter(typeWriterDom, {
-      loop: false,
-      deleteSpeed: 500
-    });
+    // var typewriter = new Typewriter(typeWriterDom, {
+    //   loop: false,
+    //   deleteSpeed: 500
+    // });
 
-    typewriter
-      .typeString("-")
-      .pauseFor(2500)
-      .typeString(" 世界因我而")
-      .pauseFor(2000)
-      .deleteChars(2)
-      .pauseFor(1000)
-      .typeString("你我而")
-      .pauseFor(1000)
-      .start();
+    // typewriter
+    //   .typeString("-")
+    //   .pauseFor(2500)
+    //   .typeString(" 世界因我而")
+    //   .pauseFor(2000)
+    //   .deleteChars(2)
+    //   .pauseFor(1000)
+    //   .typeString("你我而")
+    //   .pauseFor(1000)
+    //   .start();
   },
   destroyed() {},
   methods: {

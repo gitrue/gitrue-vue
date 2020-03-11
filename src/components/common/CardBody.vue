@@ -64,7 +64,7 @@ export default {
     return {
       moke: {
         cards : 10,
-        tags:["沙雕新闻","远程","创意","想法","远程","分享","团购","极客"],
+        tags:["沙雕新闻","远程","创意","想法","分享","团购","极客"],
         users:['庄文达','郭萌萌','mlh','zxf','nanocosa','zfs','asds','ddd','java','hogu']
         }
     };

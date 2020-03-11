@@ -11,6 +11,7 @@
 import CardBody from "../components/common/CardBody.vue";
 import Skeleton from "../components/common/Skeleton.vue";
 import _ from "lodash";
+// import a from "../utils/axios";
 // window.onload = function what(){
 // console.log(Pictogrify)
 //   new Pictogrify('my text').render(document.querySelector('.pictogram'))
@@ -29,52 +30,17 @@ export default {
     };
   },
   created() {
-    
+    const response =  this.axios.get(`/1`)
+    return response.data
   },
   destroyed() {},
   mounted() {
-    this.getBlogs();
   },
   methods: {
-    tagEvent(tag) {
-      this.tag = tag;
-    },
-    buttonEvent(type) {
-      this.type = type;
-    },
-    goBlog(blog) {
-      this.$router.push({ path: "/blog/" + blog.id });
-    },
-    getBlogs() {
-      this.blogLoadingOk = false;
-      let searchBlog = {};
-      _.isEmpty(this.tag)
-        ? (searchBlog.tag = "all")
-        : (searchBlog.tag = this.tag);
-
-      !_.isEmpty(this.type) ? (searchBlog.sort = this.type) : searchBlog;
-      this.$http
-        .post("/blog/getBlogByTag", searchBlog, {
-          headers: {
-            Accept: "application/json;charset=UTF-8"
-          }
-        })
-        .then(res => {
-          this.blogLoadingOk = true;
-          this.blogs = res.data.data.content;
-        });
-    },
-    sampleBackGroundColor() {
-      return sampleBackGroundColor();
-    }
+     
   },
   watch: {
-    tag(tag) {
-      this.getBlogs();
-    },
-    type(type) {
-      this.getBlogs();
-    }
+    
   }
 };
 </script>

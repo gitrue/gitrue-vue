@@ -36,7 +36,6 @@ export default {
   created() {},
   destroyed() {},
   mounted() {
-    this.auto();
   },
   methods: {}
 };

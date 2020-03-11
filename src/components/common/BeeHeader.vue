@@ -77,7 +77,7 @@
             </div>
           
           <p class="control gitrue-login">
-            <a class="button is-warning" @click="goLogin" v-show="!isLogin"  >
+            <a class="button is-warning"   v-show="!isLogin"  >
               <strong>登录</strong>
             </a>
           </p>
@@ -117,79 +117,14 @@ export default {
     // oautoApi.getUser("ac07d320e8ca4f30eb92", response => {
     //   debugger;
     // });
-    this.auth();
-    this.auto();
   },
   methods: {
-    auth() {
-      let code = getQueryString("code");
-      //github返回code码
-      if (!_.isEmpty(code)) {
-        console.log("test production");
-        this.loading = true;
-        oAutoApi.getUser(code, response => {
-          let user = github2newBee(response);
-          userApi.saveUser(user, response => {
-            let loginJson = {
-              userName: response.data.userName,
-              githubNodeId: response.data.githubNodeId
-            };
-            this.login(loginJson);
-          });
-        });
-      }
-    },
-    getUserInfo(userName) {
-      userApi.getUserInfoByUserName(userName, response => {
-        this.userInfo = this.$store.state.user.userInfo = response.data;
-      });
-    },
-    goLogin() {
-      this.$router.push("/login");
-    },
-    goUserPage() {
-      this.$router.push(`/user/${getUserName()}`);
-    },
-    auto() {
-      if (!_.isEmpty(getToken())) {
-        this.isLogin = true; //应该放到vuex中
-        this.user.email = getToken();
-        this.userInfo = this.$store.state.user.userInfo;
-        if (this.$store.state.user.userInfo == null)
-          this.getUserInfo(getUserName());
-        return;
-      }
-      this.isLogin = false;
-    },
-    login(loginJson) {
-      let loginJsonCopy = { ...loginJson };
-      let token = {
-        token: EP(loginJson)
-      };
-      userApi.login(token, response => {
-        loginJsonCopy.id = response.data.id;
-        setToken(EP(loginJsonCopy));
-        setInfo(JSON.stringify({ userName: response.data.userName }));
-        window.location.href = "/";
-        // this.$router.push("/");
-      });
-    },
-    exit() {
-      removeToken();
-    },
-    handleMenuCommand(router) {
-      if (router === "exit") {
-        this.exit();
-        this.auto();
-        return;
-      }
-      if (router === "/user" || router === "/setting")
-        router += `/${getUserName()}`;
+      handleMenuCommand(router) {
+       
+      // if (router === "/user" || router === "/setting")
+      //   router += `/${getUserName()}`;
       this.$router.push(router);
     },
-    openPopup() {
-      this.popupShow = true;
-    }
   }
 };
 </script>

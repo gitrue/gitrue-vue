@@ -83,7 +83,7 @@
       <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div>
       <span  class="date" style="color: rgb(186, 189, 194);">{{getTime(new Date(blog.createTime))}}</span>
       </div>
-      <div @click="goBlog(blog.id)" class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
+      <div   class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
             <strong  class="bd-article-info" style="border: 1px  black;">
                 <span > 
                   <strong  class="bd-article-title"  >
@@ -106,7 +106,7 @@
               {{blog.commentCount}}
             </span></a></li>
             <li class="Tweet-action Tweet-action--retweet">
-              <a @click="editBlog(blog.id)"  class="TweetAction TweetAction--retweetEdge web-intent">
+              <a    class="TweetAction TweetAction--retweetEdge web-intent">
             <div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge "></div>
             </a></li> 
             </ul>
@@ -141,54 +141,30 @@ export default {
     };
   },
   mounted() {
-    $("nav.tabs")
-      .find("li")
-      .click(function() {
-        if (!$(this).hasClass("is-active")) {
-          $("nav.tabs")
-            .find("li")
-            .each(function(k, v) {
-              $(v).removeClass("is-active");
-            });
-          $(this).addClass("is-active");
-          self.$emit("tagEvent", $(this).attr("type"));
-          //todo:应该减少dom移出操作
-          $("#index-main").hide();
-          newBee("#index-type").animation(500, function() {
-            $("#index-main").show();
-          });
-        }
-      });
-    this.getUserInfo();
-    this.getBlogs();
+    // $("nav.tabs")
+    //   .find("li")
+    //   .click(function() {
+    //     if (!$(this).hasClass("is-active")) {
+    //       $("nav.tabs")
+    //         .find("li")
+    //         .each(function(k, v) {
+    //           $(v).removeClass("is-active");
+    //         });
+    //       $(this).addClass("is-active");
+    //       self.$emit("tagEvent", $(this).attr("type"));
+    //       //todo:应该减少dom移出操作
+    //       $("#index-main").hide();
+    //       newBee("#index-type").animation(500, function() {
+    //         $("#index-main").show();
+    //       });
+    //     }
+    //   });
+    // this.getUserInfo();
+    // this.getBlogs();
   },
   destroyed() {},
   methods: {
-    //放在这里只是为了前期方便大家观看API 后续挪到 axios 拦截 或 vuex 全局管理器中，
-    getUserInfo() {
-      this.userInfo = this.$store.state.user.userInfo;
-      if (this.$store.state.user.userInfo == null) {
-        userApi.getUserInfoByUserName(this.userName, response => {
-          this.userInfo = response.data;
-        });
-      }
-    },
-    getBlogs() {
-      this.$http.get("/blog/getBlogsByUser").then(res => {
-        if (res.data.code === 200) {
-          this.blogs = res.data.data.content;
-        }
-      });
-    },
-    goBlog(id) {
-      this.$router.push("/blog/" + id);
-    },
-    editBlog(id) {
-      this.$router.push("/editor/edit/" + id);
-    },
-    getTime(date) {
-      return coverDate(date);
-    }
+     
   }
 };
 </script>
