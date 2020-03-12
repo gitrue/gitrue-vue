@@ -1,83 +1,112 @@
 <template>
-    <div>
-       <BeeHeader></BeeHeader>
-       <div class="container">
-          <div class="columns is-multiline" >
-             <div class="column is-3 "></div>
-             <div class="column is-9 ">
-                 <div class="center avatar" > 
-                   
-                    <my-upload field="file"
-                        @crop-success="cropSuccess"
-                        @crop-upload-success="cropUploadSuccess"
-                        @crop-upload-fail="cropUploadFail"
-                        v-model="show"
-                    :width="100"
-                    :height="100"
-                    url="/upload/qiniu"
-                    :params="params"
-                    :headers="headers"
-                    img-format="png"
-                    :withCredentials="true"></my-upload>
-                  <a><img :src="userInfo.avatarPath" @click="toggleShow" style="width:100px;height:100px"></a>
-                 </div>
-                 <el-form :model="userInfo" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
-                    <el-form-item prop="email" label="邮箱"
-                      :rules="[
-                        { required: true, message: '请输入邮箱地址', trigger: 'blur' },
-                        { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
-                      ]"
-                    >
-                      <el-input class="inputClass" v-model="userInfo.email"></el-input>
-                      
-                    </el-form-item>
-                      
-                    <el-form-item prop="address" label="地址">
-                      <el-input class="inputClass" v-model="userInfo.address"></el-input>
-                    </el-form-item>
-                      
-                    <el-form-item prop="nickName" label="昵称" :rules="[{ required: true, message: '请输入昵称', trigger: 'blur' },]">
-                      <el-input class="inputClass" v-model="userInfo.nickName"></el-input>
-                    </el-form-item>
-                      
-                    <el-form-item prop="school" label="学校">
-                      <el-input class="inputClass" v-model="userInfo.school"></el-input>
-                    </el-form-item>
-                      
-                    <el-form-item prop="companyName" label="公司">
-                      <el-input class="inputClass" v-model="userInfo.company"></el-input>
-                    </el-form-item>
-                      
-                      <el-form-item prop="link" label="链接">
-                      <el-input class="inputClass" v-model="userInfo.link"></el-input>
-                    </el-form-item>
-                      <el-form-item prop="link" label="github地址">
-                      <el-input class="inputClass" v-model="userInfo.github"></el-input>
-                    </el-form-item>
-                      <el-form-item prop="link" label="微博地址">
-                      <el-input class="inputClass" v-model="userInfo.weibo"></el-input>
-                    </el-form-item>
+  <div>
+    <BeeHeader></BeeHeader>
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-3 "></div>
+        <div class="column is-9 ">
+          <div class="center avatar">
+            <my-upload
+              field="file"
+              @crop-success="cropSuccess"
+              @crop-upload-success="cropUploadSuccess"
+              @crop-upload-fail="cropUploadFail"
+              v-model="show"
+              :width="100"
+              :height="100"
+              url="/upload/qiniu"
+              :params="params"
+              :headers="headers"
+              img-format="png"
+              :withCredentials="true"
+            ></my-upload>
+            <a
+              ><img
+                :src="userInfo.avatarPath"
+                @click="toggleShow"
+                style="width:100px;height:100px"
+            /></a>
+          </div>
+          <el-form
+            :model="userInfo"
+            ref="dynamicValidateForm"
+            label-width="100px"
+            class="demo-dynamic"
+          >
+            <el-form-item
+              prop="email"
+              label="邮箱"
+              :rules="[
+                { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+                {
+                  type: 'email',
+                  message: '请输入正确的邮箱地址',
+                  trigger: ['blur', 'change']
+                }
+              ]"
+            >
+              <el-input class="inputClass" v-model="userInfo.email"></el-input>
+            </el-form-item>
 
-                      
-                    <el-form-item>
-                      <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-                      <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-                    </el-form-item>
-                  </el-form>
-             </div>
-          </div>   
+            <el-form-item prop="address" label="地址">
+              <el-input
+                class="inputClass"
+                v-model="userInfo.address"
+              ></el-input>
+            </el-form-item>
+
+            <el-form-item
+              prop="nickName"
+              label="昵称"
+              :rules="[
+                { required: true, message: '请输入昵称', trigger: 'blur' }
+              ]"
+            >
+              <el-input
+                class="inputClass"
+                v-model="userInfo.nickName"
+              ></el-input>
+            </el-form-item>
+
+            <el-form-item prop="school" label="学校">
+              <el-input class="inputClass" v-model="userInfo.school"></el-input>
+            </el-form-item>
+
+            <el-form-item prop="companyName" label="公司">
+              <el-input
+                class="inputClass"
+                v-model="userInfo.company"
+              ></el-input>
+            </el-form-item>
+
+            <el-form-item prop="link" label="链接">
+              <el-input class="inputClass" v-model="userInfo.link"></el-input>
+            </el-form-item>
+            <el-form-item prop="link" label="github地址">
+              <el-input class="inputClass" v-model="userInfo.github"></el-input>
+            </el-form-item>
+            <el-form-item prop="link" label="微博地址">
+              <el-input class="inputClass" v-model="userInfo.weibo"></el-input>
+            </el-form-item>
+
+            <el-form-item>
+              <el-button
+                type="primary"
+                @click="submitForm('dynamicValidateForm')"
+                >提交</el-button
+              >
+              <el-button @click="resetForm('dynamicValidateForm')"
+                >重置</el-button
+              >
+            </el-form-item>
+          </el-form>
+        </div>
       </div>
-         
-         
-
-   
     </div>
-
-
+  </div>
 </template>
 
 <script>
- 
 import myUpload from "vue-image-crop-upload";
 import BeeHeader from "../../components/common/BeeHeader.vue";
 export default {
@@ -170,7 +199,7 @@ export default {
   }
 };
 </script>
- 
+
 <style scoped>
 /* body {
   background-color: #f7f7f7;

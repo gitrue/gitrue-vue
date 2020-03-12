@@ -19,6 +19,7 @@
                   pkwenda@163.com
                 </div>
               </div>
+
               <div class="field info-field is-horizontal">
                 <div class="field-label">
                   <label class="label">Username</label>

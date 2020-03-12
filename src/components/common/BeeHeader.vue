@@ -35,7 +35,7 @@
         <a class="bd-navbar-icon navbar-item"   target="_blank"></a> -->
 
             <!-- <a class="bd-navbar-icon navbar-item"   target="_blank">
-            
+
 
             <div class="dropdown " v-bind:class="{ 'is-active': menuActive }" @click="menuClick()"  >
               <div class="dropdown-trigger">

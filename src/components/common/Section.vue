@@ -1,71 +1,70 @@
 <template>
-    <div id="section">
-       <section class="hero bd-rainbow-newbee">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered">
-          <div class="column">
-            <p class="title">
-              开发者成长的开源社区
-            </p>
+  <div id="section">
+    <section class="hero bd-rainbow-newbee">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <p class="title">
+                开发者成长的开源社区
+              </p>
 
-            <br>
-            <small class="subtitle  content h6">
-              <div id="typeWriter" style="float:left"></div>
-              <strong id="typeWriter" style="float:left">New Bee</strong>
-            </small>
-          </div>
-          <div class="column is-narrow">
-             
-
+              <br />
+              <small class="subtitle  content h6">
+                <div id="typeWriter" style="float:left"></div>
+                <strong id="typeWriter" style="float:left">New Bee</strong>
+              </small>
+            </div>
+            <div class="column is-narrow"></div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="hero-foot">
-      <div class="container">
-        <nav class="tabs is-boxed">
-          <ul>
-            <li  v-for="tag in tagList" v-bind:key="tag" :type="tag">
-              <a>{{tag}}</a>
-            </li>
-             
+      <div class="hero-foot">
+        <div class="container">
+          <nav class="tabs is-boxed">
+            <ul>
+              <li v-for="tag in tagList" v-bind:key="tag" :type="tag">
+                <a>{{ tag }}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
 
-          </ul>
-        </nav>
+    <div id="modal-ter" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button class="delete close-modal" data-target="modal-ter"></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="content">a\na\n</div>
+        </section>
       </div>
     </div>
 
-  </section>
-
-  <div id="modal-ter" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
-        <button class="delete close-modal" data-target="modal-ter"></button>
-      </header>
-      <section class="modal-card-body">
-        <div class="content">a\na\n</div>
-      </section>
-
+    <div class="container" id="index-type">
+      <div class="bd-snippet-preview ">
+        <a class="button is-danger is-focused" @click="sortBy('commendCount')"
+          >热门</a
+        >
+        <a class="button is-warning is-focused" @click="sortBy('createTime')"
+          >最新</a
+        >
+        <a class="button is-info is-focused" @click="sortBy('starCount')"
+          >收藏</a
+        >
+        <a class="button is-primary is-focused" @click="sortBy('commentCount')"
+          >评论</a
+        >
+      </div>
+      <hr />
     </div>
   </div>
-
-
-  <div class="container" id="index-type">
-    <div class="bd-snippet-preview ">
-      <a class="button is-danger is-focused" @click="sortBy('commendCount')">热门</a>
-      <a class="button is-warning is-focused" @click="sortBy('createTime')">最新</a>
-      <a class="button is-info is-focused" @click="sortBy('starCount')">收藏</a>
-      <a class="button is-primary is-focused" @click="sortBy('commentCount')">评论</a>
-    </div>
-    <hr>
-  </div>
-    </div>
 </template>
-
 
 <script>
 export default {
@@ -95,12 +94,10 @@ export default {
     //     }
     //   });
     // var typeWriterDom = document.getElementById("typeWriter");
-
     // var typewriter = new Typewriter(typeWriterDom, {
     //   loop: false,
     //   deleteSpeed: 500
     // });
-
     // typewriter
     //   .typeString("-")
     //   .pauseFor(2500)

@@ -1,13 +1,12 @@
 <template>
-   <div class="container">
-        <div class="columns">
-          <card-body></card-body>
-        </div>
-  </div>   
+  <div class="container">
+    <div class="columns">
+      <card-body></card-body>
+    </div>
+  </div>
 </template>
 
 <script>
-
 import CardBody from "../components/common/CardBody.vue";
 import Skeleton from "../components/common/Skeleton.vue";
 import _ from "lodash";
@@ -19,7 +18,7 @@ import _ from "lodash";
 // };
 export default {
   name: "NewBeeIndex",
-  components: {  CardBody, Skeleton },
+  components: { CardBody, Skeleton },
   data() {
     return {
       tag: "",
@@ -30,18 +29,13 @@ export default {
     };
   },
   created() {
-    const response =  this.axios.get(`/1`)
-    return response.data
+    const response = this.axios.get(`/1`);
+    return response.data;
   },
   destroyed() {},
-  mounted() {
-  },
-  methods: {
-     
-  },
-  watch: {
-    
-  }
+  mounted() {},
+  methods: {},
+  watch: {}
 };
 </script>
 
@@ -68,13 +62,11 @@ body {
   margin: 0;
   font-size: 14px;
   font-weight: 400;
-  color: #4A4A4A;
+  color: #4a4a4a;
   /* background: #F7F7F7; */
 }
 
-.a:hover{
-  color : #fbca0a;      
+.a:hover {
+  color: #fbca0a;
 }
 </style>
-
- 

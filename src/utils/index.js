@@ -1,4 +1,3 @@
-
 import _ from 'lodash'
 const protobuf = require("protobufjs");
 
@@ -50,26 +49,38 @@ export function json2Struct(jsonObj) {
         var value = structObjTmp[field];
         switch (typeof (value)) {
             case 'number':
-                structObj[field] = { numberValue: value };
+                structObj[field] = {
+                    numberValue: value
+                };
                 break;
             case 'string':
-                structObj[field] = { stringValue: value };
+                structObj[field] = {
+                    stringValue: value
+                };
                 break;
             case 'boolean':
-                structObj[field] = { boolValue: value };
+                structObj[field] = {
+                    boolValue: value
+                };
                 break;
             case 'object':
                 // null
                 if (!value) break;
                 if (value.constructor === Object) {
-                    structObj[field] = { structValue: PSMU.json2Struct(value) };
+                    structObj[field] = {
+                        structValue: PSMU.json2Struct(value)
+                    };
                 } else if (value.constructor === Array) {
-                    structObj[field] = { listValue: PSMU.json2List(value) };
+                    structObj[field] = {
+                        listValue: PSMU.json2List(value)
+                    };
                 }
                 break;
         }
     });
-    return { fields: structObj };
+    return {
+        fields: structObj
+    };
 
 }
 export function base64Encode(buffer, start, end) {
@@ -77,7 +88,7 @@ export function base64Encode(buffer, start, end) {
         chunk = [];
     var i = 0, // output index
         j = 0, // goto index
-        t;     // temporary
+        t; // temporary
     while (start < end) {
         var b = buffer[start++];
         switch (j) {
@@ -121,7 +132,8 @@ export function base64Encode(buffer, start, end) {
 export function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]); return null;
+    if (r != null) return unescape(r[2]);
+    return null;
 }
 
 /**

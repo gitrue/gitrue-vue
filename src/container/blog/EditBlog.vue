@@ -1,45 +1,55 @@
 <template>
-    <div class="indexContainer">
-        <div class="btnsContainer">
-        </div>
-        <div class="maskContainer" v-if="dilogStatus">
-            <div class="contentContainer">
-            <div class="closeBtnContainer" @click="closeMaskFn"></div>
-                <textarea class="showAreaContainer" v-model="msgShow" readonly></textarea>
-            </div>
-        </div>
-        <el-header height="40px" style="width:100%;padding: 0px;background-color: white;"> 
-          <el-input   v-model="title" placeholder="请输入标题" style="width:80%"> </el-input> 
-           <a class="button is-warning" style="margin-top:2px" @click="postBlog">发布文章</a>
-           <!-- multiple 多选 注掉 -->
-          <el-select
-          style="width:10%"
-          v-model="tagArr"
-          filterable
-          allow-create
-          default-first-option
-          placeholder="请选择文章标签">
-          <el-option
-            v-for="item in tagOption"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-        </el-header>
-        <div class="editorContainer">
-         
-            <markdown 
-            :mdValuesP="msg.mdValue"  
-            :fullPageStatusP="true" 
-            :editStatusP="true" 
-            :previewStatusP="true" 
-            :navStatusP="true"
-            :icoStatusP="true"  
-            @childevent="childEventHandler"
-            ></markdown>
-        </div>
+  <div class="indexContainer">
+    <div class="btnsContainer"></div>
+    <div class="maskContainer" v-if="dilogStatus">
+      <div class="contentContainer">
+        <div class="closeBtnContainer" @click="closeMaskFn"></div>
+        <textarea
+          class="showAreaContainer"
+          v-model="msgShow"
+          readonly
+        ></textarea>
+      </div>
     </div>
+    <el-header
+      height="40px"
+      style="width:100%;padding: 0px;background-color: white;"
+    >
+      <el-input v-model="title" placeholder="请输入标题" style="width:80%">
+      </el-input>
+      <a class="button is-warning" style="margin-top:2px" @click="postBlog"
+        >发布文章</a
+      >
+      <!-- multiple 多选 注掉 -->
+      <el-select
+        style="width:10%"
+        v-model="tagArr"
+        filterable
+        allow-create
+        default-first-option
+        placeholder="请选择文章标签"
+      >
+        <el-option
+          v-for="item in tagOption"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        >
+        </el-option>
+      </el-select>
+    </el-header>
+    <div class="editorContainer">
+      <markdown
+        :mdValuesP="msg.mdValue"
+        :fullPageStatusP="true"
+        :editStatusP="true"
+        :previewStatusP="true"
+        :navStatusP="true"
+        :icoStatusP="true"
+        @childevent="childEventHandler"
+      ></markdown>
+    </div>
+  </div>
 </template>
 
 <script>

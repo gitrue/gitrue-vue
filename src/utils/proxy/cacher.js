@@ -23,7 +23,7 @@ export class Cacher {
      */
     removeFilter(reg) {
         let index = this.filters.indexOf(reg)
-        if(index !== -1) {
+        if (index !== -1) {
             this.filters.splice(index, 1)
         }
     }
@@ -36,17 +36,17 @@ export class Cacher {
     setCache(opt, value) {
         /*只取params和url做key*/
         // if(this.excludeHeaders) delete key.headers
-        let key='';
-        if(typeof opt.url !=='undefined'){
-            key+=opt.url;
+        let key = '';
+        if (typeof opt.url !== 'undefined') {
+            key += opt.url;
         }
 
-        if(typeof opt.params !=='undefined'){
-            key+=JSON.stringify(opt.params);
+        if (typeof opt.params !== 'undefined') {
+            key += JSON.stringify(opt.params);
         }
 
         this.cacheMap.set(key, value)
-        if(this.maxCacheSize && this.cacheMap.size > this.maxCacheSize) {
+        if (this.maxCacheSize && this.cacheMap.size > this.maxCacheSize) {
             this.cacheMap.delete([...(this.cacheMap).keys()][0])
         }
 
@@ -95,8 +95,8 @@ export class Cacher {
         this.cacheMap.clear()
     }
 
-    getKey(url,params) {
-        return url+JSON.stringify(params);
+    getKey(url, params) {
+        return url + JSON.stringify(params);
     }
 
 }

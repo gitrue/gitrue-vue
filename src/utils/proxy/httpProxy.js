@@ -1,5 +1,9 @@
-import {Cacher} from './cacher'
-import { isMhApp } from '../fn'
+import {
+    Cacher
+} from './cacher'
+import {
+    isMhApp
+} from '../fn'
 /**
  * [wrapper 包装器]
  * @param  {[axios instance]} instance
@@ -26,9 +30,9 @@ export default function wrapper(instance, option) {
      * 使用原生http请求需要传callback 不能用then方式
      * callback非全局，只在当前页面有效，切换路由等操作会导致原生回调失败（特殊需要可以扩展）。页面切换之前请求可以抛弃了
      * */
-    let cbCache={}
+    let cbCache = {}
 
-    let cbCount=0;
+    let cbCount = 0;
 
     /**
      * [axiosWithCache axios instance Proxy]
@@ -39,12 +43,12 @@ export default function wrapper(instance, option) {
      * callback非全局，只在当前页面有效，切换路由等操作会导致原生回调失败（特殊需要可以扩展）。页面切换之前请求可以抛弃了
      */
     function axiosWithCache(...arg) {
-        if(arg.length >= 1 ){
-            if(arg[0].isCache === true ){
-                if((arg[0].method === 'get' || arg[0].method === undefined)) {
+        if (arg.length >= 1) {
+            if (arg[0].isCache === true) {
+                if ((arg[0].method === 'get' || arg[0].method === undefined)) {
                     return axiosWithCache.get(...arg)
                     // return requestWithCacheCheck(arg[0], instance, ...arg)
-                }else if(arg[0].method === 'post'){
+                } else if (arg[0].method === 'post') {
                     /*正常情况是不需要post的，因为无法用很大的data做key，支持post只为一些通过post取数据的场景*/
 
                 }
@@ -91,29 +95,29 @@ export default function wrapper(instance, option) {
      * 返回值通过callback异步回传，目前不支持同步有必要可以扩展
      * get(url,{ isCache:true,params: {aaa:'',companyId:that.companyId}},callback)
      */
-    axiosWithCache.get = function(...arg) {
+    axiosWithCache.get = function (...arg) {
 
         // PSMU.debug(isMhApp()+" httpProxy get "+arg.length,arg)
         PSMU.debug(`httpProxy get: isMhApp - ${isMhApp()}, args - ${arg.length}`, arg)
 
-        let that=this;
-        if(arg.length === 1) {
+        let that = this;
+        if (arg.length === 1) {
             return instance.get(...arg);
-        }else if(isMhApp() && arg.length >= 2) {
+        } else if (isMhApp() && arg.length >= 2) {
             /*android ios exe 调用本地缓存 */
-            if(typeof arg[1] ==='object' && arg[1].isCache === true ){
-                let url=arg[0];
-                let opt=arg[1];
-                let key=cacher.getKey(url,opt.params);
+            if (typeof arg[1] === 'object' && arg[1].isCache === true) {
+                let url = arg[0];
+                let opt = arg[1];
+                let key = cacher.getKey(url, opt.params);
 
-                if(arg.length > 2 && typeof arg[2] === 'function'){
-                    let callback=arg[2];
+                if (arg.length > 2 && typeof arg[2] === 'function') {
+                    let callback = arg[2];
                     /*调原生http请求*/
-                    let cbId="callback"+cbCount++;
-                    cbCache[cbId]=callback;
-                    MHAppJSBridge.regAxiosCB(cbId,that);
-                    PSMU.debug("isMhApp get ",MHAppapi,typeof(MHAppapi.get))
-                    MHAppapi.get(url,PSMU.stringify(opt.params),cbId,"MHAppJSBridge.onAxiosCB","");
+                    let cbId = "callback" + cbCount++;
+                    cbCache[cbId] = callback;
+                    MHAppJSBridge.regAxiosCB(cbId, that);
+                    PSMU.debug("isMhApp get ", MHAppapi, typeof (MHAppapi.get))
+                    MHAppapi.get(url, PSMU.stringify(opt.params), cbId, "MHAppJSBridge.onAxiosCB", "");
                     return true;
                 }
 
@@ -134,9 +138,11 @@ export default function wrapper(instance, option) {
                 }*/
             }
         }
-        if(arg.length > 2 && typeof arg[2] === 'function'){
-            instance.get(...arg).then(function(res) {arg[2](res)});
-        }else{
+        if (arg.length > 2 && typeof arg[2] === 'function') {
+            instance.get(...arg).then(function (res) {
+                arg[2](res)
+            });
+        } else {
             return instance.get(...arg)
         }
 
@@ -146,7 +152,7 @@ export default function wrapper(instance, option) {
      * [__addFilter cacher instance addFilter function proxy]
      * @param  {[reg]} filter
      */
-    axiosWithCache.__addFilter = function(filter) {
+    axiosWithCache.__addFilter = function (filter) {
         cacher.addFilter(filter)
     }
 
@@ -154,7 +160,7 @@ export default function wrapper(instance, option) {
      * [__removeFilter cacher instance removeFilter function proxy]
      * @param  {[reg]} filter
      */
-    axiosWithCache.__removeFilter = function(filter) {
+    axiosWithCache.__removeFilter = function (filter) {
         cacher.removeFilter(filter)
     }
 
@@ -166,7 +172,7 @@ export default function wrapper(instance, option) {
     /**
      * [__clearCache cacher instance clear function proxy]
      */
-    axiosWithCache.__clearCache = function(){
+    axiosWithCache.__clearCache = function () {
         cacher.clear()
     }
 
@@ -174,7 +180,7 @@ export default function wrapper(instance, option) {
      * [proxy axios instance functions which are no need to be cached]
      */
     unCacheMethods.forEach(method => {
-        axiosWithCache[method] = function(...arg) {
+        axiosWithCache[method] = function (...arg) {
             return instance[method](...arg)
         }
     })
