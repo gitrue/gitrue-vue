@@ -76,7 +76,7 @@ const routes = [
     component: Book
 },
 {
-    path: '/user/:userName',
+    path: '/user',
     name: '用户页',
     component: User
 },

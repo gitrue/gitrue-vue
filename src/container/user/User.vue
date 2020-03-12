@@ -1,129 +1,120 @@
 <template>
-    <div>
-      <BeeHeader></BeeHeader>
-<section class="hero  "  style=" background-color:#f7f7f7">
-    <div class="hero-body" >
-      <div class="container">
-         <div class="columns is-multiline" >
-              <div class="column is-3 "></div>
-              <div class="column is-2">
-                <img :src="userInfo.avatarPath"   class=" header-avatar-big img-circle " alt="头像" >
-                <div>
-                  &nbsp;
-                  <a v-show="userInfo.github" :href="userInfo.github">
-                    <span class="icon" style="color: #333;">
-                      <i class="fa fa-lg fa-github"></i>
-                    </span>
-                  </a>
-                  <a href="https://github.com/pkwenda">
-                    <span class="icon" style="color: #333;">
-                      <i class="fa fa-lg fa-google"></i>
-                    </span>
-                  </a>
-                  <a href="https://github.com/pkwenda">
-                    <span class="icon" style="color: #333;">
-                      <i class="fa fa-lg fa-weibo"></i>
-                    </span>
-                  </a>
-                  <a href="https://github.com/pkwenda">
-                    <span class="icon" style="color: #333;">
-                      <i class="fa fa-lg fa-facebook"></i>
-                    </span>
-                  </a>
+    <div class="section">
+        <div class="container">
 
-                </div>
-              </div>
-              <div class="column is-4">
-                <strong style="font-size:25px">{{userInfo.nickName || userInfo.userName}}</strong>
-                <br>
+            <div class="columns">
+          <div class="column">
+          <div class="boxed boxed--more-space">
+          <h2 class="title is-3">Profile</h2>
+          <form action="/profile/update" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="lLqZpJLPc4oOxvro6XbHcPeuH+Aa5lrt0e8An8H1jYBQG0GaiY65QmvF8fT91REY/rjcUBQcUYy/5hVXBsprqQ=="><div class="field info-field is-horizontal">
+          <div class="field-label">
+          <label class="label">Email</label>
+          </div>
+          <div class="field-body">
+          pkwenda@163.com
 
-                <div>
-                  <span class="tag is-dark">专栏作者 </span>
-                  <span class="tag is-success">活跃成员 </span>
-                </div>
-                <div><i class="fa fa-map-marker"></i><small  > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地球</small></div>
-                <div><i class="fa fa-graduation-cap" ></i><small>&nbsp;&nbsp;&nbsp;{{userInfo.school || '暂无'}}</small></div>
-                <div><i class="fa fa-briefcase" ></i><small>&nbsp;&nbsp;&nbsp;&nbsp;{{userInfo.company || '暂无'}}&nbsp;&nbsp;{{userInfo.signature}}</small></div>
-                <div><i class="fa fa-link"></i><small>&nbsp;&nbsp;&nbsp;&nbsp;<a :href="userInfo.link">{{userInfo.link || '暂无' }}</a></small></div>
-              </div>
+          </div>
+          </div>
+          <div class="field info-field is-horizontal">
+          <div class="field-label">
+          <label class="label">Username</label>
+          </div>
+          <div class="field-body">
+          pkwenda
+          &nbsp;
+          <a href="/u/pkwenda">My Toolbox</a>
 
-            </div>
-             <div class="column is-3 "></div>
-      </div>
-    </div>
+          </div>
+          </div>
+          <div class="field is-horizontal">
+          <div class="field-label is-normal">
+          <label class="label">Avatar</label>
+          </div>
+          <div class="field-body">
+          <div class="field">
+          <div class="control"><div class="columns">
+          <div class="column is-narrow">
+          <div class="screenshot-thumbnail">
+          <img src="https://www.gravatar.com/avatar/846ec8d51c6b50f7926464bb520b1c1c%3Fs=large_width&amp;d=identicon" style="height: 96px">
+          </div>
+          </div>
+          <div class="column content">
+          <p>
+          We use <a href="https://en.gravatar.com/">Gravatar</a> for default images.
+          </p>
+          <p>
+          </p><div data-react-class="UploadImage" data-react-props="{&quot;title&quot;:&quot;📎 Upload avatar&quot;,&quot;uploadPath&quot;:&quot;/profile/upload_avatar&quot;}" data-react-cache-id="UploadImage-0"><a>📎 Upload avatar</a></div>
+          <p></p>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="field is-horizontal">
+          <div class="field-label is-normal">
+          <label class="label">Name</label>
+          </div>
+          <div class="field-body">
+          <div class="field">
+          <div class="control"><input type="text" name="name" id="name" class="input">
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="field is-horizontal">
+          <div class="field-label is-normal">
+          <label class="label">Bio</label>
+          </div>
+          <div class="field-body">
+          <div class="field">
+          <div class="control"><textarea name="bio" id="bio" class="textarea" rows="4"></textarea>
+          </div>
+          <p class="help">Will be shown on your public page</p>
+          </div>
+          </div>
+          </div>
+          <div class="field is-horizontal">
+          <div class="field-label is-normal">
+          </div>
+          <div class="field-body">
+          <div class="field">
+          <div class="control"><input class="button is-success" type="submit" value="Update">
+          </div>
+          </div>
+          </div>
+          </div>
+          <div class="content text-right">
+          <a href="/profile/change_password">Change Password</a>
+          </div>
+          </form></div>
+          <br>
+          <div class="boxed boxed--more-space">
+          <h3 class="title is-4">Your Tribune Exptert Stats</h3>
+          <em>No ranking yet. Vote on nominations to increase your rank.</em>
+          <br>
+          <br>
+          <div class="columns is-mobile">
+          <div class="column">
+          <a href="/tribune">Learn more</a>
+          </div>
+          <div class="column is-narrow">
+          <a href="/tribune/nominate">👍 Vote on nominations</a>
+          </div>
+          </div>
 
-    <div class="hero-foot">
-      <div class="container">
-        <div class="columns is-multiline" >
-              <div class="column is-3 "></div>
-              <div class="column is-6 ">
-                <nav class="tabs is-boxed">
-          <ul>
-            <li  v-for="tag in ['活动', '专栏', '分享', '收藏', '点赞']" v-bind:key="tag" :type="tag">
-              <a>{{tag}}</a>
-            </li>
-            
-          </ul>
-           
-        </nav>
-              </div>
-              <div class="column is-3 "></div>
+          </div>
+          </div>
+          <div class="column">
+          <h2 class="title is-3">Verified Products</h2>
+          <div class="boxed">
+          If you own or work on a product, go to its page and click <b>verify</b> to gain managing access.
+          </div>
+          </div>
+          </div>
+
         </div>
-        
       </div>
-    </div>
-
-  </section>
-
-  <div  id="index-main" class="container" style="margin-top:20px" ><!----> <div  class="columns is-multiline"> 
-    <article  class="column is-2"> </article>
-    <article  class="column is-8">
-      
-      <ul   st:block="entryList" class="column-entry-list entry-list"><!---->
-      <li  v-for="blog in blogs" :key="blog" class="item"><div   st:block="entry"  class="column-entry with-thumb"><div  class="row user-info-row"><div data-v-311d2efa=""  st:block="userPopover"   class="user-popover-box"><!----><a  href="/user/5823d1a3a22b9d0067fde1f7" target="_blank" rel="" st:name="user" st:state="5823d1a3a22b9d0067fde1f7" class="user-info" data-v-311d2efa=""><span  class="username"><!-- 放人名  头像 --></span></a></div>
-      <span  class="date" style="color: rgb(186, 189, 194);">{{getTime(new Date(blog.createTime))}}</span>
-      </div>
-      <div   class="bd-article-image is-warning" style="height: 180px;background-color: #c1bdbd">
-            <strong  class="bd-article-info" style="border: 1px  black;">
-                <span > 
-                  <strong  class="bd-article-title"  >
-                  {{blog.title}}
-                  </strong>
-                </span>
-            </strong>
-      </div>
-      <div  class="row abstract-row"> <br>
-      <a style="font-size: 15px;"  href="/post/5a579d63f265da3e4d72a028" target="_blank" rel="" st:name="abstract" class="abstract with-thumb">
-      {{blog.content.length>150 ? blog.content.substring(0,150) : blog.content}}...
-      </a>
-      
-      </div><div  class="row action-row">
-       <ul class="Tweet-actions">
-         <li class="Tweet-action Tweet-action--heart"><a  target="_blank" class="TweetAction TweetAction--heartEdge web-intent"><div class="Icon Icon--heartEdge TweetAction-icon Icon--heartEdge"></div> <span class="TweetAction-stat">
-              {{blog.commendCount}}
-            </span></a></li>
-            <li class="Tweet-action"><a   class="TweetAction TweetAction--replyEdge web-intent"><div class="Icon Icon--reply TweetAction-icon Icon--replyEdge"></div><span class="TweetAction-stat">
-              {{blog.commentCount}}
-            </span></a></li>
-            <li class="Tweet-action Tweet-action--retweet">
-              <a    class="TweetAction TweetAction--retweetEdge web-intent">
-            <div class="Icon Icon--retweet TweetAction-icon Icon--retweetEdge "></div>
-            </a></li> 
-            </ul>
-      
-      <div  class="entry-action-box">
-        <div  class="read-action view-count">阅读 {{blog.readCount}}</div><!---->
-        <div  st:name="moreBtn" class="read-action more-action"><div  class="icon ion-ios-more"></div><!----></div><!----></div></div></div>
-      </li><!---->
-      
-      </ul>
-      </article>
-            <article  class="column is-2"></article>
-            </div></div>
-
-    </div>
-
-
 
 </template>
 
@@ -170,9 +161,9 @@ export default {
 </script>
  
 <style scoped>
-body {
+/* body {
   background-color: #f7f7f7;
-}
+} */
 .item {
   padding: 2.5rem;
   border-bottom: 1px solid hsla(0, 0%, 59%, 0.1);

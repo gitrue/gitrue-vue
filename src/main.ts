@@ -7,7 +7,7 @@ import './registerServiceWorker'
 import './utils/axios'
 require('../static/style.css')
 require('../static/newBee.css')
-
+ 
 Vue.config.productionTip = false
 process.env.VUE_APP_API_URL = '/api'
 

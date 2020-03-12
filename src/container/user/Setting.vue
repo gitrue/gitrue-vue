@@ -172,9 +172,9 @@ export default {
 </script>
  
 <style scoped>
-body {
+/* body {
   background-color: #f7f7f7;
-}
+} */
 .inputClass {
   width: 60%;
 }

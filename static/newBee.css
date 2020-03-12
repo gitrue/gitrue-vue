@@ -2,9 +2,9 @@
  * 自定义论坛样式
  */
 
-body {
+/* body {
     background-color: #f7f7f7;
-}
+} */
 
 .header-avatar{
     width: 35px;
@@ -48,11 +48,14 @@ body {
     background-color: transparent;
 }
 
-
-.qq {
-    font-family: inherit;
-    font-size: 17px;
-    margin-top: 14px;
-    margin-right: 10px;
-    color: #8a7f00;
+.gitrue-font {
+    font-size: 20px;
+    font-weight: 700;
+    background: 0 0;
+    outline: 0;
+    padding: 2px 4px;
+    margin: 0;
+    border: 0;
+    /* cursor: pointer; 小手*/
+    color: #454545;
   }

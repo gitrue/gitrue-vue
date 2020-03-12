@@ -69,7 +69,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: #4A4A4A;
-  background: #F7F7F7;
+  /* background: #F7F7F7; */
 }
 
 .a:hover{
