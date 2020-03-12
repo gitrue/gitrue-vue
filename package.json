@@ -2,9 +2,12 @@
   "name": "gitrue",
   "version": "0.1.0",
   "private": true,
+  "main": "sass/mystyles.scss",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss static/mystyle.css",
+    "css-watch": "npm run css-build -- --watch"
   },
   "dependencies": {
     "axios": "^0.19.2",

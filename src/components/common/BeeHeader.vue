@@ -113,9 +113,8 @@
           <div class="navbar-item">
             <div class="field is-grouped is-grouped-multiline">
               <p class="control gitrue-login">
-                <a class="button is-warning" @click="goLogin" v-show="!isLogin">
-                  <strong>登录</strong>
-                </a>
+                 
+                 <button class="button is-info is-light"  @click="goLogin" v-show="!isLogin">登录</button>
               </p>
             </div>
           </div>
