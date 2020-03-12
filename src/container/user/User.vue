@@ -1,121 +1,145 @@
 <template>
-    <div class="section">
-        <div class="container">
-
-            <div class="columns">
-          <div class="column">
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
           <div class="boxed boxed--more-space">
-          <h2 class="title is-3">Profile</h2>
-          <form action="/profile/update" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="lLqZpJLPc4oOxvro6XbHcPeuH+Aa5lrt0e8An8H1jYBQG0GaiY65QmvF8fT91REY/rjcUBQcUYy/5hVXBsprqQ=="><div class="field info-field is-horizontal">
-          <div class="field-label">
-          <label class="label">Email</label>
+            <h2 class="title is-3">Profile</h2>
+            <form action="/profile/update" accept-charset="UTF-8" method="post">
+              <input
+                type="hidden"
+                name="authenticity_token"
+                value="lLqZpJLPc4oOxvro6XbHcPeuH+Aa5lrt0e8An8H1jYBQG0GaiY65QmvF8fT91REY/rjcUBQcUYy/5hVXBsprqQ=="
+              />
+              <div class="field info-field is-horizontal">
+                <div class="field-label">
+                  <label class="label">Email</label>
+                </div>
+                <div class="field-body">
+                  pkwenda@163.com
+                </div>
+              </div>
+              <div class="field info-field is-horizontal">
+                <div class="field-label">
+                  <label class="label">Username</label>
+                </div>
+                <div class="field-body">
+                  pkwenda &nbsp;
+                  <a href="/u/pkwenda">My Toolbox</a>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Avatar</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <div class="columns">
+                        <div class="column is-narrow">
+                          <div class="screenshot-thumbnail">
+                            <img
+                              src="https://www.gravatar.com/avatar/846ec8d51c6b50f7926464bb520b1c1c%3Fs=large_width&amp;d=identicon"
+                              style="height: 96px"
+                            />
+                          </div>
+                        </div>
+                        <div class="column content">
+                          <p>
+                            We use
+                            <a href="https://en.gravatar.com/">Gravatar</a> for
+                            default images.
+                          </p>
+                          <p></p>
+                          <div
+                            data-react-class="UploadImage"
+                            data-react-props='{"title":"📎 Upload avatar","uploadPath":"/profile/upload_avatar"}'
+                            data-react-cache-id="UploadImage-0"
+                          >
+                            <a>📎 Upload avatar</a>
+                          </div>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Name</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input type="text" name="name" id="name" class="input" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">Bio</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <textarea
+                        name="bio"
+                        id="bio"
+                        class="textarea"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                    <p class="help">Will be shown on your public page</p>
+                  </div>
+                </div>
+              </div>
+              <div class="field is-horizontal">
+                <div class="field-label is-normal"></div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input
+                        class="button is-success"
+                        type="submit"
+                        value="Update"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content text-right">
+                <a href="/profile/change_password">Change Password</a>
+              </div>
+            </form>
           </div>
-          <div class="field-body">
-          pkwenda@163.com
-
-          </div>
-          </div>
-          <div class="field info-field is-horizontal">
-          <div class="field-label">
-          <label class="label">Username</label>
-          </div>
-          <div class="field-body">
-          pkwenda
-          &nbsp;
-          <a href="/u/pkwenda">My Toolbox</a>
-
-          </div>
-          </div>
-          <div class="field is-horizontal">
-          <div class="field-label is-normal">
-          <label class="label">Avatar</label>
-          </div>
-          <div class="field-body">
-          <div class="field">
-          <div class="control"><div class="columns">
-          <div class="column is-narrow">
-          <div class="screenshot-thumbnail">
-          <img src="https://www.gravatar.com/avatar/846ec8d51c6b50f7926464bb520b1c1c%3Fs=large_width&amp;d=identicon" style="height: 96px">
-          </div>
-          </div>
-          <div class="column content">
-          <p>
-          We use <a href="https://en.gravatar.com/">Gravatar</a> for default images.
-          </p>
-          <p>
-          </p><div data-react-class="UploadImage" data-react-props="{&quot;title&quot;:&quot;📎 Upload avatar&quot;,&quot;uploadPath&quot;:&quot;/profile/upload_avatar&quot;}" data-react-cache-id="UploadImage-0"><a>📎 Upload avatar</a></div>
-          <p></p>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="field is-horizontal">
-          <div class="field-label is-normal">
-          <label class="label">Name</label>
-          </div>
-          <div class="field-body">
-          <div class="field">
-          <div class="control"><input type="text" name="name" id="name" class="input">
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="field is-horizontal">
-          <div class="field-label is-normal">
-          <label class="label">Bio</label>
-          </div>
-          <div class="field-body">
-          <div class="field">
-          <div class="control"><textarea name="bio" id="bio" class="textarea" rows="4"></textarea>
-          </div>
-          <p class="help">Will be shown on your public page</p>
-          </div>
-          </div>
-          </div>
-          <div class="field is-horizontal">
-          <div class="field-label is-normal">
-          </div>
-          <div class="field-body">
-          <div class="field">
-          <div class="control"><input class="button is-success" type="submit" value="Update">
-          </div>
-          </div>
-          </div>
-          </div>
-          <div class="content text-right">
-          <a href="/profile/change_password">Change Password</a>
-          </div>
-          </form></div>
-          <br>
+          <br />
           <div class="boxed boxed--more-space">
-          <h3 class="title is-4">Your Tribune Exptert Stats</h3>
-          <em>No ranking yet. Vote on nominations to increase your rank.</em>
-          <br>
-          <br>
-          <div class="columns is-mobile">
-          <div class="column">
-          <a href="/tribune">Learn more</a>
+            <h3 class="title is-4">Your Tribune Exptert Stats</h3>
+            <em>No ranking yet. Vote on nominations to increase your rank.</em>
+            <br />
+            <br />
+            <div class="columns is-mobile">
+              <div class="column">
+                <a href="/tribune">Learn more</a>
+              </div>
+              <div class="column is-narrow">
+                <a href="/tribune/nominate">👍 Vote on nominations</a>
+              </div>
+            </div>
           </div>
-          <div class="column is-narrow">
-          <a href="/tribune/nominate">👍 Vote on nominations</a>
-          </div>
-          </div>
-
-          </div>
-          </div>
-          <div class="column">
+        </div>
+        <div class="column">
           <h2 class="title is-3">Verified Products</h2>
           <div class="boxed">
-          If you own or work on a product, go to its page and click <b>verify</b> to gain managing access.
+            If you own or work on a product, go to its page and click
+            <b>verify</b> to gain managing access.
           </div>
-          </div>
-          </div>
-
         </div>
       </div>
-
+    </div>
+  </div>
 </template>
 
 <script>
@@ -154,12 +178,10 @@ export default {
     // this.getBlogs();
   },
   destroyed() {},
-  methods: {
-     
-  }
+  methods: {}
 };
 </script>
- 
+
 <style scoped>
 /* body {
   background-color: #f7f7f7;
