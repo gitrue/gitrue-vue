@@ -23,6 +23,8 @@ const Book = () =>
   import(/* webpackChunkName: "book" */ "../container/book/Book.vue");
 const Share = () =>
   import(/* webpackChunkName: "book" */ "../container/Share.vue");
+const Page404 = () =>
+  import(/* webpackChunkName: "book" */ "../container/404.vue");
 const Editor = () =>
   import(/* webpackChunkName: "book" */ "../container/Editor.vue");
 
@@ -95,6 +97,11 @@ const routes = [
     path: "/setting/:userName",
     name: "Setting",
     component: Setting
+  },
+   {
+    path: "/404",
+    name: "404",
+    component: Page404
   },
   {
     path: "/about",

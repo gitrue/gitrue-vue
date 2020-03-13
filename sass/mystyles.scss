@@ -24,6 +24,7 @@ $body-background-color: $pink;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+// $input-focus-color: red;
 
 // $control-border-width: 3px;
 // $button-border-color: hsl(0, 0%, 86%);
@@ -41,3 +42,4 @@ $input-shadow: none;
 @import "../node_modules/bulma/sass/components/navbar.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
+

@@ -3,8 +3,12 @@
     <div class="hero-head"></div>
 
     <div class="hero-body">
+       
       <div class="container has-text-centered gitrue-editor">
         <div class="column is-6 is-offset-3">
+
+          <a class=""><div class="control"><input type="text" placeholder="输入合适的标题 ..." class="input is-static post-title is-large"></div></a>
+          <br>
           <quill-editor
             v-model="content"
             ref="quillEditorA"
@@ -17,6 +21,7 @@
         </div>
       </div>
     </div>
+
   </section>
 </template>
 
@@ -67,9 +72,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.gitrue-editor {
-  background-color: white !important;
-}
+// .post-title {
+//   border-color: #cccccc;
+//   border-top-width: 1px;
+//   border-left-width: 1px;
+//   border-bottom-width: 1px;
+//   border-right-width: 1px;
+// }
 
 .ql-editor {
   height: 400px !important;

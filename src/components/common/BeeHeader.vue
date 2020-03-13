@@ -29,66 +29,24 @@
             <span class="is-hidden-touch is-hidden-widescreen gitrue-font">
               菜单
             </span>
-            <!-- 占位 -->
-            <!-- <a class="bd-navbar-icon navbar-item"   target="_blank"></a>
-
-        <a class="bd-navbar-icon navbar-item"   target="_blank"></a> -->
-
-            <!-- <a class="bd-navbar-icon navbar-item"   target="_blank">
-
-
-            <div class="dropdown " v-bind:class="{ 'is-active': menuActive }" @click="menuClick()"  >
-              <div class="dropdown-trigger">
-                <span   aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>Menu</span>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </span>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                <div class="dropdown-content">
-                  <a href="#" class="dropdown-item">
-                    Dropdown item
-                  </a>
-                  <a class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item is-active">
-                    Active dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <hr class="dropdown-divider">
-                  <a href="#" class="dropdown-item">
-                    With a divider
-                  </a>
-                </div>
-              </div>
-            </div>
-         </a> -->
           </span>
 
-          <a
-            class="navbar-item bd-navbar-item-videos "
-            href="https://bulma.io/videos/"
-          >
+         
+          <router-link class="navbar-item bd-navbar-item-love" to="/">
             <span class="gitrue-font">沙雕新闻</span>
-          </a>
+          </router-link>
 
-          <a
-            class="navbar-item bd-navbar-item-expo "
-            href="https://bulma.io/expo/"
-          >
+
+          <router-link class="navbar-item bd-navbar-item-love" to="/">
             <span class="gitrue-font">英语角</span>
-          </a>
+          </router-link>
+          
 
           <router-link class="navbar-item bd-navbar-item-love" to="/book">
             <span class="gitrue-font">书评</span>
           </router-link>
 
-         <router-link class="navbar-item bd-navbar-item-love" to="/share">
+          <router-link class="navbar-item bd-navbar-item-love" to="/share">
             <span class="gitrue-font">好站推荐</span>
           </router-link>
 
@@ -110,8 +68,14 @@
           <div class="navbar-item">
             <div class="field is-grouped is-grouped-multiline">
               <p class="control gitrue-login">
-                 <!--  is-info is-light -->
-                 <button class="button  is-info is-light gitrue-font"  @click="goLogin" v-show="!isLogin">登录</button>
+                <!--  is-info is-light -->
+                <button
+                  class="button  is-info is-light gitrue-font"
+                  @click="goLogin"
+                  v-show="!isLogin"
+                >
+                  登录
+                </button>
               </p>
             </div>
           </div>

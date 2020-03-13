@@ -75,3 +75,16 @@
     /* cursor: pointer; 小手*/
     color: #454545;
 }
+
+.gitrue-font-5 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    background: 0 0;
+    outline: 0;
+    padding: 2px 4px;
+    margin: 0;
+    border: 0;
+    /* cursor: pointer; 小手*/
+    color: #454545;
+}
