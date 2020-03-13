@@ -21,6 +21,8 @@ const Life = () =>
   import(/* webpackChunkName: "life" */ "../container/life/Life.vue");
 const Book = () =>
   import(/* webpackChunkName: "book" */ "../container/book/Book.vue");
+const Share = () =>
+  import(/* webpackChunkName: "book" */ "../container/Share.vue");
 const Editor = () =>
   import(/* webpackChunkName: "book" */ "../container/Editor.vue");
 
@@ -78,6 +80,11 @@ const routes = [
     path: "/book",
     name: "book",
     component: Book
+  },
+  {
+    path: "/share",
+    name: "分享导航",
+    component: Share
   },
   {
     path: "/user",

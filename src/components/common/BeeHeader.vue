@@ -88,12 +88,9 @@
             <span class="gitrue-font">书评</span>
           </router-link>
 
-          <a
-            class="navbar-item bd-navbar-item-backers "
-            href="https://bulma.io/backers/"
-          >
-            <span class="gitrue-font">好站分享</span>
-          </a>
+         <router-link class="navbar-item bd-navbar-item-love" to="/share">
+            <span class="gitrue-font">好站推荐</span>
+          </router-link>
 
           <a class="bd-navbar-icon navbar-item" target="_blank"></a>
           <a class="gitrue-input is-static">
