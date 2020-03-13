@@ -5,8 +5,8 @@ import store from "./store";
 import "bulma/css/bulma.css";
 import "./registerServiceWorker";
 import "./utils/axios";
-require("../static/style.css");
 require("../static/newBee.css");
+require("../static/style.css");
 require("../static/mystyle.css");
 
 Vue.config.productionTip = false;

@@ -113,8 +113,8 @@
           <div class="navbar-item">
             <div class="field is-grouped is-grouped-multiline">
               <p class="control gitrue-login">
-                 
-                 <button class="button is-info is-light"  @click="goLogin" v-show="!isLogin">登录</button>
+                 <!--  is-info is-light -->
+                 <button class="button  is-info is-light gitrue-font"  @click="goLogin" v-show="!isLogin">登录</button>
               </p>
             </div>
           </div>

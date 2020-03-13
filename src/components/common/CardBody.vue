@@ -6,7 +6,7 @@
         <main class="column">
           <h3 class="title is-4 boxed-section-title">
             <div class="columns is-gapless">
-              <div class="column">New and Popular</div>
+              <!-- <div class="column">New and Popular</div>
               <div
                 class="column is-narrow boxed-section-title__action is-hidden-mobile"
               >
@@ -15,7 +15,7 @@
                   href="https://chrome.google.com/webstore/detail/alternative-to-by-saashub/bfllfmelefabahclnehpdocekedapcbj"
                   >Chrome Extension</a
                 >
-              </div>
+              </div> -->
             </div>
           </h3>
           <ol class="services-list">

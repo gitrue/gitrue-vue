@@ -1,12 +1,22 @@
 <template>
-  <section class="section above-main">
+  <section class=" above-main">
     <div class="container">
       <div class="text-center">
         <h2 class="title is-3 is-5-mobile">
-          Almost all software products are on SaaSHub
+          有活力的开源社区
         </h2>
-        <div class="subtitle">
+        <!-- <div class="subtitle">
           117,568 products and growing. Is yours here?
+        </div> -->
+      </div>
+      <br />
+      <div class=" columns   is-mobile sitemap-links is-multiline gitrue-tags">
+        <div
+          class="column is-one-fifth-mobile gitrue-font-2"
+          v-for="tag in moke.tags"
+          v-bind:key="tag"
+        >
+          <a href="">{{ tag }}</a>
         </div>
       </div>
     </div>
@@ -50,4 +60,9 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+.gitrue-tags {
+  padding-bottom: 10px !important;
+  padding-top: 10px !important;
+}
+</style>
