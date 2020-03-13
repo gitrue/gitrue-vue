@@ -1,73 +1,69 @@
 <template>
-  <div class="gitrue-book">
-    <div id="modal-ter" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">Modal title</p>
-          <button class="delete close-modal" data-target="modal-ter"></button>
-        </header>
-        <section class="modal-card-body">
-          <div class="content">a\na\n</div>
-        </section>
-        <!--<footer class="modal-card-foot">-->
-        <!--<a class="button is-success">Save changes</a>-->
-        <!--<a class="button close-modal" data-target="modal-ter">Cancel</a>-->
-        <!--</footer>-->
+  <section class="section is-medium intro-module--ciwb--3FG8L">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6">
+          <div class="content">
+            <h1 id="ffTitle" class="title is-1 intro-module--title--3as8X">
+              Creating interfaces with Bulma
+            </h1>
+            <p id="ffTagline" class="subtitle intro-module--tagline--2Q5P6">
+              <span
+                ><span>The</span>&nbsp;<strong>official</strong>&nbsp;<span
+                  >Bulma book</span
+                ></span
+              >
+            </p>
+            <hr class="mini-hr-module--component--2Z_E4" />
+            <p id="ffDescription" class="intro-module--description--3Usbe">
+              Build an interface with Bulma components, customize it with Sass,
+              and learn how to integrate it with your favourite JS environment
+            </p>
+            <div class="intro-module--icons--3Fa4K">
+              <div
+                class="logos-module--component--dmD_v logos-module--left--3QnNz logos-module--small--3zcvq"
+              >
+                <div class="logos-module--logo--3Y230">
+                   <!-- svg -->
+                </div>
+                <div class="logos-module--logo--3Y230">
+                    <!-- svg -->
+                </div>
+                <div class="logos-module--logo--3Y230">
+                  <!-- svg -->
+                </div>
+                <div class="logos-module--logo--3Y230">
+                  <!-- svg -->
+                </div>
+                <div class="logos-module--logo--3Y230">
+                  <!-- svg -->
+                </div>
+              </div>
+            </div>
+            <div class="buttons-module--buttons--23F5D">
+               <a
+                href="https://www.amazon.com/Creating-Interfaces-Bulma-Jeremy-Thomas-ebook/dp/B079M1BJG4/"
+                class="button is-large is-warning"
+                target="_blank"
+                >评价一下</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="column is-offset-1 is-5">
+          <div id="ffPreview" class="intro-module--preview--iSgF1">
+            <img
+              src="https://jgthms.com/books/bulma-book-cover.png"
+              
+              alt="Bulma book book cover"
+              width="378"
+              height="496"
+            />
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="container" id="index-main">
-      <div class="bd-tws-love">
-        <article class="bd-tw" style="padding-left: 50px;border: 0px;">
-          <div class="is-centered" style="width:310px;height:420px;">
-            <div class="bd-tw-content">
-              <div class="is-centered" style="width:300px;height:380px">
-                <img
-                  src="http://file.ituring.com.cn/ScreenShow/0100c4de6d0965b125db"
-                />
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="bd-tw" style="padding-left: 50px;border: 0px;">
-          <div class="is-centered" style="width:310px;height:420px;">
-            <div class="bd-tw-content">
-              <div class="is-centered" style="width:300px;height:380px">
-                <img
-                  src="http://file.ituring.com.cn/ScreenShow/0100bf54fd5c299f5e02"
-                />
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="bd-tw" style="padding-left: 50px;border: 0px;">
-          <div class="is-centered" style="width:310px;height:420px;">
-            <div class="bd-tw-content">
-              <div class="is-centered" style="width:300px;height:380px">
-                <img
-                  src="http://file.ituring.com.cn/ScreenShow/010067de1e19ddef9c15"
-                />
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="bd-tw" style="padding-left: 50px;border: 0px;">
-          <div class="is-centered" style="width:310px;height:420px;">
-            <div class="bd-tw-content">
-              <div class="is-centered" style="width:300px;height:380px">
-                <img
-                  src="http://file.ituring.com.cn/ScreenShow/1708febcfca2b7d1f8ad"
-                />
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -87,7 +83,30 @@ export default {
 </script>
 
 <style lang="less">
-.gitrue-book {
-  margin-top: 30px !important;
+.logos-module--component--dmD_v {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.intro-module--ciwb--3FG8L .intro-module--icons--3Fa4K {
+    margin-bottom: 1rem;
+}
+
+ .mini-hr-module--component--2Z_E4 {
+    background-color: #00d1b2;
+    height: 2px;
+    width: 4rem;
+}
+
+.intro-module--description--3Usbe {
+    font-size: 1.5rem;
+    max-width: 18em;
+}
+
+.buttons-module--buttons--23F5D {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 </style>
