@@ -1,5 +1,6 @@
 <template>
   <div class="section">
+   <!-- <SvgAvatar name="ss" style="width:50px"></SvgAvatar> -->
     <div class="container">
       <home-tag></home-tag>
       <div class="columns">
