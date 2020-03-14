@@ -5,9 +5,12 @@ import store from "./store";
 import "bulma/css/bulma.css";
 import "./registerServiceWorker";
 import "./utils/axios";
-require("../static/newBee.css");
-require("../static/style.css");
-require("../static/mystyle.css");
+import'../public/newBee.css'
+require("../public/style.css");
+require("../public/mystyle.css");
+import'../public/css/quill/quill.bubble.css'
+import'../public/css/quill/quill.core.css'
+import'../public/css/quill/quill.snow.css'
 
 Vue.config.productionTip = false;
 process.env.VUE_APP_API_URL = "/api";

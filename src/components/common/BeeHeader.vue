@@ -37,7 +37,7 @@
           </router-link>
 
 
-          <router-link class="navbar-item bd-navbar-item-love" to="/">
+          <router-link class="navbar-item bd-navbar-item-love" to="/post">
             <span class="gitrue-font">英语角</span>
           </router-link>
           

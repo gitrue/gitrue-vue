@@ -42,8 +42,8 @@
 import Vue from "vue";
 import marked from "marked";
 import scroll from "vue-scroll";
-import hljs from "../../static/js/highlight.min.js";
-import range from "../../static/js/rangeFn.js";
+import hljs from "../../public/js/highlight.min.js";
+import range from "../../public/js/rangeFn.js";
 Vue.use(scroll);
 
 // marked.setOptions({
@@ -303,15 +303,15 @@ export default {
 <style lang="scss">
 /*引入reset文件*/
 
-@import "../../static/css/reset";
+@import "../../public/css/reset";
 
 /*引入github的markdown样式文件*/
 
-@import "../../static/css/github-markdown.css";
+@import "../../public/css/github-markdown.css";
 
 /*引入atom的代码高亮样式文件*/
 
-@import "../../static/css/atom-one-dark.min.css";
+@import "../../public/css/atom-one-dark.min.css";
 .mdContainer {
   width: 100%;
   height: 100%;

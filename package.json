@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss static/mystyle.css",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/mystyle.css",
     "css-watch": "npm run css-build -- --watch"
   },
   "dependencies": {
