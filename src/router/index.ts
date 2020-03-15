@@ -13,20 +13,8 @@ const Blog = () =>
   import(/* webpackChunkName: "blog" */ "../container/blog/Blog.vue");
 const EditBlog = () =>
   import(/* webpackChunkName: "blog" */ "../container/blog/EditBlog.vue");
-const User = () =>
-  import(/* webpackChunkName: "user" */ "../container/user/User.vue");
-const Setting = () =>
-  import(/* webpackChunkName: "user" */ "../container/user/Setting.vue");
-const Life = () =>
-  import(/* webpackChunkName: "life" */ "../container/life/Life.vue");
-const Book = () =>
-  import(/* webpackChunkName: "book" */ "../container/book/Book.vue");
-const Share = () =>
-  import(/* webpackChunkName: "book" */ "../container/Share.vue");
-const Page404 = () =>
-  import(/* webpackChunkName: "book" */ "../container/404.vue");
-const Editor = () =>
-  import(/* webpackChunkName: "book" */ "../container/Editor.vue");
+ 
+ 
 
 Vue.use(VueRouter);
 
@@ -55,17 +43,12 @@ const routes = [
   {
     path: "/post",
     name: "post",
-    component: Editor
+    component: () => import(/* webpackChunkName: "book" */ "../container/Editor.vue")
   },
   {
     path: "/blog/:id",
     name: "blog",
     component: Blog
-  },
-  {
-    path: "/life",
-    name: "life",
-    component: Life
   },
   {
     path: "/editor/post/new",
@@ -81,27 +64,22 @@ const routes = [
   {
     path: "/book",
     name: "book",
-    component: Book
+    component: () => import(/* webpackChunkName: "book" */ "../container/book/Book.vue")
   },
   {
     path: "/share",
     name: "分享导航",
-    component: Share
+    component: () => import(/* webpackChunkName: "book" */ "../container/Share.vue")
   },
   {
     path: "/user",
     name: "用户页",
-    component: User
-  },
-  {
-    path: "/setting/:userName",
-    name: "Setting",
-    component: Setting
+    component: () => import(/* webpackChunkName: "user" */ "../container/user/User.vue")
   },
    {
     path: "/404",
     name: "404",
-    component: Page404
+    component: () => import(/* webpackChunkName: "book" */ "../container/404.vue")
   },
   {
     path: "/about",

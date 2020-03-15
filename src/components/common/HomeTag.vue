@@ -1,22 +1,24 @@
 <template>
   <section class=" above-main">
     <div class="container">
+
       <div class="text-center">
-        <h2 class="title is-3 is-5-mobile">
-          有活力的开源社区
-        </h2>
-        <!-- <div class="subtitle">
-          117,568 products and growing. Is yours here?
-        </div> -->
+       <h1 class="title  is-size-3-desktop is-size-4-mobile" v-if="title != ''">{{title}}</h1>
+      <br />
+      <h2 class="subtitle is-size-5-desktop" v-if="des != ''">
+        {{des}}
+        <a href="mailto:matt@pendeavor.com"> Email me </a>.
+      </h2>
+        
       </div>
       <br />
       <div class=" columns   is-mobile sitemap-links is-multiline gitrue-tags">
         <div
           class="column is-one-fifth-mobile gitrue-font-2"
-          v-for="tag in moke.tags"
-          v-bind:key="tag"
+          v-for="(tag, index) in tags"
+          v-bind:key="index"
         >
-          <a href="">{{ tag }}</a>
+          <a href="">{{ tag.value }}</a>
         </div>
       </div>
     </div>
@@ -26,37 +28,41 @@
 <script>
 export default {
   name: "HomeTag",
-  props: {},
+   props: {
+     title: {
+      type: String,
+      default: ""
+    },
+    des: {
+      type: String,
+      default: ""
+    },
+    type: {
+      type: String,
+      default: ""
+    }
+    // ,
+    // tags: {
+    //   type: Array,
+    //   default: []
+    // }
+  },
   components: {},
   created() {
-    // window.onload = function what(){
-    // console.log(Pictogrify)
-    //   new Pictogrify('my text').render(document.querySelector('.avatar'))
-    // };
+    this.getInfo()
   },
   data() {
-    return {
-      moke: {
-        cards: 10,
-        tags: ["沙雕新闻", "远程工作", "创意", "想法", "分享", "团购", "极客"],
-        users: [
-          "庄文达",
-          "郭萌萌",
-          "mlh",
-          "zxf",
-          "nanocosa",
-          "zfs",
-          "asds",
-          "ddd",
-          "java",
-          "hogu"
-        ]
-      }
-    };
+     return {
+       tags :[]
+     }
   },
   mounted() {},
   destroyed() {},
-  methods: {}
+  methods: {
+    async getInfo() {
+     this.tags = await  this.axios.get(`/setting/get/${this.type}`)
+    }
+  }
 };
 </script>
 

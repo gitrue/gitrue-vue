@@ -71,7 +71,7 @@
                 <!--  is-info is-light -->
                 <button
                   class="button  is-info is-light gitrue-font"
-                  @click="goLogin"
+                  @click="login"
                   v-show="!isLogin"
                 >
                   登录
@@ -86,17 +86,12 @@
 </template>
 
 <script>
-import { TransferDom, Popup } from "vux";
 import Login from "../../container/login/Login.vue";
 
 import _ from "lodash";
 import { debug } from "util";
 export default {
   name: "BeeHeader",
-  components: {
-    Popup,
-    Login
-  },
   data() {
     return {
       menuActive: false,
@@ -123,6 +118,9 @@ export default {
     menuClick() {
       this.menuActive = !this.menuActive;
       console.log(this.menuActive);
+    },
+    login() {
+      console.log('login')
     }
   }
 };

@@ -21,6 +21,7 @@ module.exports = {
 
     filenameHashing: true,
 
+    
     // When building in multi-pages mode, the webpack config will contain different plugins
     // (there will be multiple instances of html-webpack-plugin and preload-webpack-plugin).
     // Make sure to run vue inspect if you are trying to modify the options for those plugins.
@@ -75,7 +76,14 @@ module.exports = {
             .splitChunks({
                 cacheGroups: {}
             });
-
+        config.resolve.alias
+            .set('@', path.resolve(__dirname, './src'))
+            // .set('assets',resolve('src/assets'))
+            // .set('@components',path.resolve(__dirname, './src'))
+            // .set('layout',resolve('src/layout'))
+            // .set('base',resolve('src/base'))
+            // .set('static',resolve('src/static'))
+ 
         // 'src/lib' 目录下为外部库文件，不参与 eslint 检测
         // config.module
         //     .rule('eslint')
@@ -120,7 +128,13 @@ module.exports = {
 
         hotOnly: false,
 
-        proxy: null,
+        proxy: {
+            '/api': {
+              target: 'http://localhost:9999',
+              ws: true,
+              changeOrigin: true
+            } 
+          },
 
         before: app => {}
     },

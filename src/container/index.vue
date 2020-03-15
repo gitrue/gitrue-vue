@@ -21,16 +21,9 @@ export default {
   components: { CardBody, Skeleton },
   data() {
     return {
-      tag: "",
-      type: "",
-      blogs: [], //blogs分页缓存
-      blogLoadingOk: false,
-      tagList: ["java", "python", "node", "go", "javascript", "sql"]
     };
   },
   created() {
-    const response = this.axios.get(`/1`);
-    return response.data;
   },
   destroyed() {},
   mounted() {},

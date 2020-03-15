@@ -2,7 +2,7 @@
   <div class="section">
    <!-- <SvgAvatar name="ss" style="width:50px"></SvgAvatar> -->
     <div class="container">
-      <home-tag></home-tag>
+      <home-tag type="homeTags"title="有活力的开源社区"></home-tag>
       <div class="columns">
         <main class="column">
           <h3 class="title is-4 boxed-section-title">
@@ -2708,21 +2708,18 @@
 </template>
 
 <script>
-import SvgAvatar from "./SvgAvatar.vue";
-import HomeTag from "./HomeTag.vue";
+import SvgAvatar from "@/components/common/SvgAvatar.vue";
+import HomeTag from "@/components/common/HomeTag.vue";
 export default {
   name: "Section",
   props: { tagList: Array },
   components: { SvgAvatar, HomeTag },
   created() {
-    // window.onload = function what(){
-    // console.log(Pictogrify)
-    //   new Pictogrify('my text').render(document.querySelector('.avatar'))
-    // };
+    this.getInfo()
   },
   data() {
     return {
-      moke: {
+      api: {
         cards: 10,
         tags: ["沙雕新闻", "远程", "创意", "想法", "分享", "团购", "极客"],
         users: [
@@ -2742,7 +2739,11 @@ export default {
   },
   mounted() {},
   destroyed() {},
-  methods: {}
+  methods: {
+    async getInfo() {
+     this.api.tags = await  this.axios.get(`/setting/get/homeTags`)
+    }
+  }
 };
 </script>
 

@@ -1,12 +1,7 @@
 <template>
   <section class="section projects    has-text-centered">
     <div class="container is-narrow">
-      <h1 class="title  is-size-3-desktop is-size-4-mobile">好站推荐</h1>
-      <br />
-      <h2 class="subtitle is-size-5-desktop">
-        我们推荐美丽实用、有创意的网站或工具，您有推荐 ?
-        <a href="mailto:matt@pendeavor.com"> Email me </a>.
-      </h2>
+      <HomeTag :tags="api.tags" type="shareTags" title="好站推荐" des="我们推荐美丽实用、有创意的网站或工具，您有推荐 ?"></HomeTag>
       <div class="project-grid">
         <div class="columns is-multiline is-mobile">
           <div class="column is-12-mobile is-half-tablet is-one-third-desktop">
@@ -154,18 +149,29 @@
 </template>
 
 <script>
+import HomeTag from "@/components/common/HomeTag.vue";
 export default {
   name: "Share",
-  components: {},
+  components: {HomeTag},
   data() {
     return {
-      content: ""
+      api: {
+        tags: ["沙雕新闻", "远程", "创意", "想法", "分享", "团购", "极客"]
+         
+      }
     };
   },
-  created() {},
-  mounted() {},
+  created() {
+    this.getInfo()
+  },
+  mounted() {
+  },
   destroyed() {},
-  methods: {}
+  methods: {
+    async getInfo() {
+     this.api.tags = await  this.axios.get(`/setting/get/homeTags`)
+    }
+  }
 };
 </script>
 
